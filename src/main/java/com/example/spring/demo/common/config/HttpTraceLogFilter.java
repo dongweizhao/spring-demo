@@ -1,5 +1,7 @@
 package com.example.spring.demo.common.config;
 
+import cn.g2link.user.cas.client.entity.UserInfoUtil;
+import cn.g2link.user.cas.client.entity.UserInfoUtilNew;
 import com.alibaba.fastjson.JSON;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

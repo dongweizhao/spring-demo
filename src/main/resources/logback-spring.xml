@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true">
     <property name="log_dir" value="/data/web_log/java"/>
-    <property name="moduleName" value="spring-demo"/>
+    <property name="moduleName" value="spring-user-jar-demo"/>
     <property name="default_log" value="${log_dir}/${moduleName}/${moduleName}-default"/>
     <property name="request_trace_log" value="${log_dir}/${moduleName}/${moduleName}-request-trace"/>
     <property name="error_log" value="${log_dir}/${moduleName}/common-error"/>
@@ -84,8 +84,10 @@
     <logger name="com.dangdang.ddframe.job" level="INFO"/>
     <logger name="org.apache.ibatis" level="INFO"/>
     <logger name="org.apache.http" level="INFO"/>
+    <logger name="org.apache.shiro" level="INFO"/>
     <logger name="org.mybatis" level="INFO"/>
 
+    o.a.shiro.mg
     <!--druid如果执行sql出错打印日志,这个直接打印到async-default中，这样如果有出错也不会打印到common error中从而污染common error -->
     <logger name="druid.sql.Statement" level="WARN" additivity="false">
         <appender-ref ref="async-default"/>

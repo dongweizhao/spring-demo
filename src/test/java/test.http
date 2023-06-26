@@ -1,4 +1,31 @@
+POST http://localhost:80/api/item
+Content-Type: application/x-www-form-urlencoded
+
+id=99&content=new-element
+
+###
+POST http://localhost:80/api/item
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="field-name"
+name: 王建国
+--WebAppBoundary--
+
+###
 GET http://localhost:8080/user/selectList
 Accept: application/json
 
 ###
+
+
+## 查询我的锁定人员列表
+POST https://oa.jettech.cn/JettechHR/hrdCandidateLockingRecord/findHrdCandidateLockingRecordByDynamicalRestrictionNew
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Cookie: JSESSIONID=5ABB8FEEC196152B32396BA1E2814F8B
+
+fliterHistoryLockingPersonnel=true&dataTableParameter={"draw":1,"columns":[{"data":"id","name":"id","searchable":false,"orderable":false,"search":{"value":"","regex":false}},{"data":"id","name":"id","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"no","name":"","searchable":false,"orderable":false,"search":{"value":"","regex":false}},{"data":3,"name":"","searchable":false,"orderable":false,"search":{"value":"","regex":false}},{"data":"name","name":"hrdCandidate.name","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"gender","name":"hrdCandidate.gender","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"phone","name":"hrdCandidate.phone","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"email","name":"hrdCandidate.email","searchable":false,"orderable":false,"search":{"value":"","regex":false}},{"data":"province","name":"hrdCandidate.province","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"baseAddress","name":"hrdCandidate.baseAddress","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"salaryExpectation","name":"hrdCandidate.salaryExpectation","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"post","name":"hrdCandidate.post","searchable":false,"orderable":false,"search":{"value":"","regex":false}},{"data":"businessDirectionText","name":"hrdCandidate.businessDirection","searchable":false,"orderable":false,"search":{"value":"","regex":false}},{"data":"graduateInstitutions","name":"hrdCandidate.graduateInstitutions","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"major","name":"hrdCandidate.major","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"education","name":"hrdCandidate.education","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"graduationTime","name":"hrdCandidate.graduationTime","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"secondGraduateInstitutions","name":"hrdCandidate.secondGraduateInstitutions","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"secondMajor","name":"hrdCandidate.secondMajor","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"secondEducation","name":"hrdCandidate.secondEducation","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"secondGraduationTime","name":"hrdCandidate.secondGraduationTime","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"resumeChannel","name":"hrdCandidate.resumeChannel","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"recommender","name":"hrdCandidate.recommender","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"recommenderNumber","name":"hrdCandidate.recommenderNumber","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"createTime","name":"hrdCandidate.createTime","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"isAcceptAssignment","name":"hrdCandidate.isAcceptAssignment","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"candidateStatus","name":"hrdCandidate.candidateStatus","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"creator","name":"hrdCandidate.creator","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"createTime","name":"hrdCandidate.createTime","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"hrEvaluation","name":"hrdCandidate.hrEvaluation","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"interviewWaitingDays","name":"","searchable":false,"orderable":false,"search":{"value":"","regex":false}},{"data":"storageProperty","name":"storageProperty","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"lockingStartTime","name":"lockingStartTime","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"lockingPeople","name":"lockingPeople","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"releaseTime","name":"releaseTime","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"inductionGuide","name":"","searchable":false,"orderable":false,"search":{"value":"","regex":false}},{"data":"relatedRecruitmentNeeds","name":"","searchable":false,"orderable":false,"search":{"value":"","regex":false}},{"data":"offercase","name":"","searchable":false,"orderable":false,"search":{"value":"","regex":false}},{"data":"entrycase","name":"","searchable":false,"orderable":false,"search":{"value":"","regex":false}}],"order":[{"column":1,"dir":"desc"}],"start":0,"length":160,"search":{"value":"","regex":false}}
+
+
+
+

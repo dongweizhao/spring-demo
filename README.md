@@ -6,7 +6,7 @@ springboot、mybatis-plus、logback
 ![img_1.png](img_1.png)
 
 # 日志
-日志默认保存在/data/web_log/java/spring-demo下，如果需要替换修改logback-spring.xml文件对应内容即可。
+日志默认保存在/data/web_log/java/spring-user-jar-demo下，如果需要替换修改logback-spring.xml文件对应内容即可。
 ![img.png](img.png)
 # 配置
 系统的配置都在application.properties文件中，例如端口、数据库连接
@@ -17,19 +17,19 @@ springboot、mybatis-plus、logback
 
 # 系统部署
 ## 打包
-执行以下命令会在target下产生可部署的jar包spring-demo-0.0.1-SNAPSHOT.jar
+执行以下命令会在target下产生可部署的jar包spring-user-jar-demo-0.0.1-SNAPSHOT.jar
 ```shell
 mvn clean -DskipTests=true package
 ```
 ![img_3.png](img_3.png)
 
 ## 部署
-复制spring-demo-0.0.1-SNAPSHOT.jar，执行以下命令进行控制台启动
+复制spring-user-jar-demo-0.0.1-SNAPSHOT.jar，执行以下命令进行控制台启动
 ```shell
-java -jar spring-demo-0.0.1-SNAPSHOT.jar
+java -jar spring-user-jar-demo-0.0.1-SNAPSHOT.jar
 ```
 后台启动
 ```shell
-nohup java -jar spring-demo-0.0.1-SNAPSHOT.jar &
+nohup java -jar spring-user-jar-demo-0.0.1-SNAPSHOT.jar &
 
 ```

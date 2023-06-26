@@ -7,7 +7,6 @@ package com.example.spring.demo.common.bo;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.spring.demo.common.exception.BizException;
 import com.example.spring.demo.common.exception.BizExceptionCode;
 import org.slf4j.Logger;
@@ -29,27 +28,19 @@ public class QueryResult<T> implements Serializable {
     private long pages;
 
     public QueryResult(Object obj) {
-        if (obj instanceof Page) {
-            Page page = (Page)obj;
-            this.current = page.getCurrent();
-            this.pageSize = page.getSize();
-            this.total = page.getTotal();
-            this.list = page.getRecords();
-        } else {
-            if (!(obj instanceof List)) {
-                log.error("obj type:{}", obj.getClass());
-                throw new BizException(BizExceptionCode.QUERY_RESULT_TYPE_CONVERT_ERROR, new String[0]);
-            }
-
-            List list = (List)obj;
-            this.current = 1L;
-            this.pageSize = (long)list.size();
-            this.pages = 1L;
-            this.list = list;
-            this.total = (long)list.size();
+        if (!(obj instanceof List)) {
+            log.error("obj type:{}", obj.getClass());
+            throw new BizException(BizExceptionCode.QUERY_RESULT_TYPE_CONVERT_ERROR, new String[0]);
         }
 
+        List list = (List) obj;
+        this.current = 1L;
+        this.pageSize = (long) list.size();
+        this.pages = 1L;
+        this.list = list;
+        this.total = (long) list.size();
     }
+
 
     public long getPages() {
         if (this.total > 0L && this.total % this.pageSize > 0L) {
@@ -59,21 +50,6 @@ public class QueryResult<T> implements Serializable {
         }
     }
 
-    public QueryResult(Page page, List list) {
-        this.current = page.getCurrent();
-        this.pageSize = page.getSize();
-        this.total = page.getTotal();
-        this.list = list;
-    }
-
-    public static <T> QueryResult convert(Page page, Class<T> cls) {
-        QueryResult queryResult = new QueryResult();
-        queryResult.setCurrent(page.getCurrent());
-        queryResult.setPageSize(page.getSize());
-        queryResult.setTotal(page.getTotal());
-        queryResult.setList(queryResult.copyList(page.getRecords(), cls));
-        return queryResult;
-    }
 
     public static <T> QueryResult convert(QueryResult page, List<T> list) {
         QueryResult queryResult = new QueryResult();
@@ -90,15 +66,15 @@ public class QueryResult<T> implements Serializable {
     }
 
     private <T> List copyList(List list, Class<T> target) {
-        return (List)(CollectionUtils.isEmpty(list) ? new ArrayList() : JSON.parseArray(JSON.toJSONString(list), target));
+        return (List) (CollectionUtils.isEmpty(list) ? new ArrayList() : JSON.parseArray(JSON.toJSONString(list), target));
     }
 
     public void setPageNum(int pageNum) {
-        this.current = (long)pageNum;
+        this.current = (long) pageNum;
     }
 
     @JSONField(
-        serialize = false
+            serialize = false
     )
     public long getPageNum() {
         return this.current;
