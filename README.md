@@ -17,7 +17,7 @@ springboot、logback
 ```shell
 sh package.sh
 ```
-![img_3.png](img_3.png)
+![img_5.png](img_5.png)
 
 ## 部署
 复制backend-0.0.1-SNAPSHOT.jar，执行以下命令进行控制台启动
