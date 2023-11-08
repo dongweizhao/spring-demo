@@ -1,10 +1,7 @@
 package com.example.spring.demo.service;
 
-import com.example.spring.demo.mapper.UserMapper;
-import com.example.spring.demo.po.User;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.spring.demo.bo.User;
 import com.example.spring.demo.vo.req.SelectListReq;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -16,7 +13,7 @@ import java.util.List;
  * @author w
  * @since 2023-04-06
  */
-public interface IUserService extends IService<User> {
+public interface IUserService  {
 
     List<User> selectList(SelectListReq req);
 }

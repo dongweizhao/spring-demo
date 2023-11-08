@@ -1,14 +1,11 @@
 package com.example.spring.demo.controller;
 
 
-import com.example.spring.demo.common.bo.RespData;
-import com.example.spring.demo.po.User;
+import com.example.spring.demo.bo.User;
 import com.example.spring.demo.service.IUserService;
 import com.example.spring.demo.vo.req.SelectListReq;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,8 +29,8 @@ public class UserController {
      * 入金成功
      */
     @RequestMapping(value = "/selectList", method = RequestMethod.GET)
-    public RespData<List<User>> selectList() {
-        return RespData.success(userService.selectList(new SelectListReq()));
+    public List<User> selectList() {
+        return userService.selectList(new SelectListReq());
     }
 
 }

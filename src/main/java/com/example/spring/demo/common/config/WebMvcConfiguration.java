@@ -1,10 +1,16 @@
 package com.example.spring.demo.common.config;
 
+import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.alibaba.fastjson.support.config.FastJsonConfig;
+import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+
+import java.util.List;
 
 /**
  * @author weizhao.dong
@@ -27,6 +33,20 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 //		registry.addInterceptor(WebConfigManager.getSentinelWebInterceptor(null,null)).addPathPatterns("/**");
     }
 
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
+        // 配置序列化特性
+        FastJsonConfig config = new FastJsonConfig();
+        config.setSerializerFeatures(
+                SerializerFeature.WriteBigDecimalAsPlain, // 序列化BigDecimal为普通数字
+                SerializerFeature.WriteMapNullValue // 序列化空值
+        );
+        fastConverter.setFastJsonConfig(config);
+
+        // 将FastJSON的消息转换器添加到转换器列表
+        converters.add(fastConverter);
+    }
 
 
     @Override

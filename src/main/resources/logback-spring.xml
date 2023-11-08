@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true">
     <property name="log_dir" value="/data/web_log/java"/>
-    <property name="moduleName" value="spring-demo"/>
+    <property name="moduleName" value="backend"/>
     <property name="default_log" value="${log_dir}/${moduleName}/${moduleName}-default"/>
     <property name="request_trace_log" value="${log_dir}/${moduleName}/${moduleName}-request-trace"/>
     <property name="error_log" value="${log_dir}/${moduleName}/common-error"/>

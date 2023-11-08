@@ -112,13 +112,7 @@ public class RespData<T> implements Serializable {
     }
 
     private void convertData(Object data, RespData resp) {
-        if (data instanceof QueryResult) {
-            QueryResult r = (QueryResult) data;
-            resp.setPagination(PageResult.convert(r));
-            resp.setResult(Objects.isNull(r.getList()) ? new ArrayList<>() : r.getList());
-        } else {
-            resp.setResult(data);
-        }
+        resp.setResult(data);
     }
 
     public static RespData success() {
@@ -171,11 +165,5 @@ public class RespData<T> implements Serializable {
         private long current;
         // 总页数
         private long pages;
-
-        public static PageResult convert(QueryResult q) {
-            PageResult pageResult = new PageResult();
-            BeanUtils.copyProperties(q, pageResult);
-            return pageResult;
-        }
     }
 }
