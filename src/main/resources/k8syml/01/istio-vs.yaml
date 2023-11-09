@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: k8s-demo-vs
+spec:
+  gateways:
+    - k8s-demo-gateway
+  hosts:
+    - demo.web.com
+  http:
+    - match:
+        - uri:
+            prefix: /backend
+      route:
+        - destination:
+            host: backend
+            port:
+              number: 80
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: frontend
+            port:
+              number: 80

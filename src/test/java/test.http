@@ -1,0 +1,9 @@
+### 列表查询
+GET http://localhost:8080/user/selectList
+Content-Type: application/json
+Accept: application/json
+
+### 分页查询
+GET http://localhost:8080/backend/user/page
+Content-Type: application/json
+Accept: application/json

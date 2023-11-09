@@ -1,5 +1,6 @@
 package com.example.spring.demo.vo.req;
 
+import com.example.spring.demo.common.bo.BaseReq;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,6 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class SelectListReq {
+public class SelectListReq extends BaseReq {
     private String username;
 }
