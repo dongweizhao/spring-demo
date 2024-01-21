@@ -7,3 +7,15 @@ Accept: application/json
 GET http://localhost:8080/backend/user/page
 Content-Type: application/json
 Accept: application/json
+
+
+###提现
+GET http://localhost:8080/backend/account/withdraw?amount=200
+Content-Type: application/json
+Accept: application/json
+
+
+###充值
+GET http://localhost:8080/backend/account/deposit?amount=500
+Content-Type: application/json
+Accept: application/json

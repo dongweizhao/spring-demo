@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: dweizhao/frontend:latest
+          image: dweizhao/frontend2:latest
           ports:
             - containerPort: 80
           resources:

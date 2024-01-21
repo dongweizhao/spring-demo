@@ -8,7 +8,7 @@
     <springProperty scope="context" name="log.level" source="logging.level.root" defaultValue="INFO"/>
     <!-- 日志格式 -->
     <property name="LOG_PATTERN"
-              value="%date{HH:mm:ss.SSS}, [%X{X-B3-TraceId:-} %X{X-B3-SpanId:-}] [%thread] %-5level [%marker] %logger{36} %method:%L - %msg %n"/>
+              value="%date{yyyy-MM-dd HH:mm:ss.SSS}, [%X{X-B3-TraceId:-} %X{X-B3-SpanId:-}] [%thread] %-5level [%marker] %logger{36} %method:%L - %msg %n"/>
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder charset="UTF-8">

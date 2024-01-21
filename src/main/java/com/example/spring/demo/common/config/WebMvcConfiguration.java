@@ -33,20 +33,20 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 //		registry.addInterceptor(WebConfigManager.getSentinelWebInterceptor(null,null)).addPathPatterns("/**");
     }
 
-    @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-        FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
-        // 配置序列化特性
-        FastJsonConfig config = new FastJsonConfig();
-        config.setSerializerFeatures(
-                SerializerFeature.WriteBigDecimalAsPlain, // 序列化BigDecimal为普通数字
-                SerializerFeature.WriteMapNullValue // 序列化空值
-        );
-        fastConverter.setFastJsonConfig(config);
-
-        // 将FastJSON的消息转换器添加到转换器列表
-        converters.add(fastConverter);
-    }
+//    @Override
+//    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+//        FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
+//        // 配置序列化特性
+//        FastJsonConfig config = new FastJsonConfig();
+//        config.setSerializerFeatures(
+//                SerializerFeature.WriteBigDecimalAsPlain, // 序列化BigDecimal为普通数字
+//                SerializerFeature.WriteMapNullValue // 序列化空值
+//        );
+//        fastConverter.setFastJsonConfig(config);
+//
+//        // 将FastJSON的消息转换器添加到转换器列表
+//        converters.add(fastConverter);
+//    }
 
 
     @Override
